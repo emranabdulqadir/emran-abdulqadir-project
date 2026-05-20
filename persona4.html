@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personality Profile Hub</title>
+<h2>Quick Personality Pulse Quiz</h2>
+<p>How do you compare to my "Disciplined Visionary" profile?</p>
+<style>
+       footer { 
+        background: darkred;             
+        text-align: left; 
+        height: 80px;
+        padding: 5px; }
+        h2,p{
+            font-size: 50px;
+        }
+        form{
+            font-size: 50px;
+        }
+        select,button{
+            font-size: 50px;
+        }
+</style>
+</head>
+<body bgcolor="darkred">
+<form>
+    <p><b>1. How do you handle a big project?</b></p>
+    <input type="radio" name="q1" value="plan" checked> I create a detailed plan first.<br>
+    <input type="radio" name="q1" value="dive"> I start immediately and figure it out.
+
+    <p><b>2. Which interests do we share? (Select all that apply)</b></p>
+    <input type="checkbox" name="q2" value="web" checked> Web Development<br>
+    <input type="checkbox" name="q2" value="physics"> Physics/Science<br>
+    <input type="checkbox" name="q2" value="tech"> New Technology
+
+    <p><b>3. What do you value most in a group?</b></p>
+    <select name="q3">
+        <option value="accuracy">Accuracy and Results</option>
+        <option value="harmony">Getting along with everyone</option>
+        <option value="speed">Finishing as fast as possible</option>
+    </select>
+
+    <p><button type="button" onclick="alert('Submission received!')">Submit My Answers</button></p>
+</form>
+<footer> 
+            <p>Rate me here</p> 
+        </footer> 
+</body>
+</html>
+
+
+
