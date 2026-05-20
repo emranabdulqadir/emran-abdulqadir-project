@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personality Profile Hub</title>
+    <style>
+         .container { 
+        width: 100%;
+        font-size: 50px;   
+    } 
+    select{
+        font-size: 50px;
+    }
+    option{
+        font-size: 50px;
+    }
+        button{
+            font-size: 50px;
+        }
+           footer { 
+        background: grey;             
+        text-align: left; 
+        height: 80px;
+        padding: 30px; }
+    </style>
+</head>   
+<body  bgcolor="darkred"> 
+    <div class="container">
+ <h2>Join My Network</h2>
+    <p>Sign up to compare results and collaborate with me.</p>
+    <form action="/register" method="POST" >
+        <p>
+            <label for="name">Full Name:</label><br>
+            <textarea name="" id="" cols="100" rows="5">enter your name</textarea>
+        </p>
+        <p>
+            <label for="email">Email Address:</label><br>
+             <textarea name="" id="" cols="100" rows="5">enter your email address</textarea>
+        </p>
+        <p>
+            <label for="interest">Primary Interest:</label><br>
+            <select id="interest" name="user_interest">
+                <option value="physics">Physics & Football</option>
+                <option value="web">Web Development</option>
+                <option value="space">Space Technology</option>
+            </select>
+        </p>
+        <p>
+            <label for="password">Create Password:</label><br>
+             <textarea name="" id="" cols="100" rows="5">enter password</textarea>
+        </p>
+        <button type="submit" size="50px">Register Now</button>
+    </form>
+    <footer> 
+            <p>I you want to be my friend, register here </p> 
+        </footer> 
+    </body>
+</html>
+
+    
