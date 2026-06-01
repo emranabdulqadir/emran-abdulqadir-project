@@ -3,6 +3,35 @@
 <head>
     <title>My Personality Profile Hub</title>
     <style>
+        body{font-size: 50px;}
+         .navbar { 
+      position: sticky; 
+      top: 0;  
+      width: 100%; 
+      margin: 0;
+       padding: 0px;  
+      overflow: scroll;
+   } 
+   .navbar a { 
+      display: block; 
+      float: left; 
+      color: #f2f2f2; 
+      text-align: center; 
+      padding: 10px; 
+      text-decoration: none; 
+      font-size: 17px; 
+      background-color: red;
+   } 
+   .navbar a:hover { 
+      background-color: darkblue; 
+      color: black; 
+   } 
+   .active-link { 
+      background-color: darkred; 
+      color: grey; }
+          header{font-size: 50px;
+    background-color: darkred;
+padding: 100px;}
          .container { 
         width: 100%;
         font-size: 50px;   
@@ -16,25 +45,52 @@
         button{
             font-size: 50px;
         }
+         form{
+            font-size: 50px;}
+            input{
+            height: 100%;
+            width: 100%;
+            font-size: 50px;
+            }
            footer { 
-        background: grey;             
+        background: darkred;             
         text-align: left; 
         height: 80px;
         padding: 30px; }
+        #errorMsg { 
+      color: red; 
+      font-size: 50px; 
+      margin-top: 10px; 
+    } 
+ 
+    #successMsg { 
+      color: green; 
+      font-size: 50px; 
+      margin-top: 10px; 
+    } 
+ 
     </style>
 </head>   
-<body  bgcolor="darkred"> 
+<body> 
+   <nav class="navbar"> 
+      <a href="target 2.html" class="active-link">Menu</a> 
+      <a href="Persona1.html">Introduction</a> 
+      <a href="Persona2.html">Table</a> 
+      <a href="Persona3.html">Register</a> 
+      <a href="Persona4.html">Quiz</a> 
+      <a href="Persona5.html">Sources</a> 
     <div class="container">
- <h2>Join My Network</h2>
+ <header><h2>Join My Network</h2>
     <p>Sign up to compare results and collaborate with me.</p>
-    <form action="/register" method="POST" >
+    <form id="myForm" action="/register" method="POST" onsubmit="validateForm(event)" >
+    </header>
         <p>
             <label for="name">Full Name:</label><br>
-            <textarea name="" id="" cols="100" rows="5">enter your name</textarea>
+            <input type="text" id="name" placeholder="enter your name" minlength="4" maxlength="10">
         </p>
         <p>
             <label for="email">Email Address:</label><br>
-             <textarea name="" id="" cols="100" rows="5">enter your email address</textarea>
+             <input type="email" id="email" placeholder="enter your email address" minlength="4" maxlength="10">
         </p>
         <p>
             <label for="interest">Primary Interest:</label><br>
@@ -46,9 +102,48 @@
         </p>
         <p>
             <label for="password">Create Password:</label><br>
-             <textarea name="" id="" cols="100" rows="5">enter password</textarea>
+       <input type="password" id="password" placeholder="enter password" minlength="4" maxlength="10"> 
         </p>
-        <button type="submit" size="50px">Register Now</button>
+        <button id="submit" type="submit" size="50px">Register Now</button>
+          <div id="errorMsg"></div> 
+          <div id="successMsg"></div>
+        <script>  
+        function validateForm(event) { 
+      event.preventDefault(); // Prevent form submission 
+ 
+      var nameInput = document.getElementById("name"); 
+      var emailInput = document.getElementById("email");
+      var password = document.getElementById("password"); 
+      var errorMsg = document.getElementById("errorMsg"); 
+      var successMsg = document.getElementById("successMsg"); 
+ 
+      errorMsg.innerHTML = ""; 
+      successMsg.innerHTML = ""; 
+ 
+      // Validate name 
+      if (nameInput.value === "") { 
+        errorMsg.innerHTML = "Please enter your name."; 
+        return false; 
+      } 
+ 
+      // Validate email 
+      if (emailInput.value === "") { 
+        errorMsg.innerHTML = "Please enter your email."; 
+        return false; 
+      } 
+ 
+       // Validate password
+      if (passwordInput.value === "") { 
+        errorMsg.innerHTML = "Please enter your password."; 
+        return false; 
+      } 
+
+      // Form is valid 
+      successMsg.innerHTML = "Form submitted successfully!"; 
+      document.getElementById("myForm").reset(); 
+    } 
+
+    </script>
     </form>
     <footer> 
             <p>I you want to be my friend, register here </p> 
