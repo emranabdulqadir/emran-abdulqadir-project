@@ -1,1 +1,103 @@
+<html> 
+ <head> 
+<style> 
+   body { 
+      margin: 0; 
+   } 
+   .navbar { 
+      position: sticky; 
+      top: 0;  
+      width: 100%; 
+      margin: 0;
+       padding: 0px;  
+      overflow: scroll;
+      background-color: red;   
+   } 
+   .navbar a { 
+      display: block; 
+      float: left; 
+      color: #f2f2f2; 
+      text-align: center; 
+      padding: 10px; 
+      text-decoration: none; 
+      font-size: 17px; 
+      background-color: red;
+   } 
+   .navbar a:hover { 
+      background-color: darkblue; 
+      color: black; 
+   } 
+   .active-link { 
+      background-color: darkred; 
+      color: grey; 
+   } 
+   .heading {  
+      padding-top: 170px;
+      text-align: center;
+      background-color: darkred; 
+      padding-bottom: 300px 
+   } 
+   button { 
+        padding: 10px 15px; 
+        margin: 5px; 
+        background:#a90438; 
+        color: white; 
+        border: none; 
+        cursor: pointer; 
+        border-radius: 5px; 
+    } 
+    button:hover { 
+        background: #f39797; 
+    } 
+    #output, #dataOutput { 
+        background: white; 
+        padding: 15px; 
+        border-radius: 5px; 
+        margin-top: 15px; 
+        border: 1px solid #ccc; 
+    } 
+</style> 
+<meta>Managed by: Emran Abdulqadir<meta>
+</head> 
+<body background="perona.png">
+   <nav class="navbar"> 
+      <a href="target 2.html" class="active-link">Menu</a> 
+      <a href="Persona1.html">Introduction</a> 
+      <a href="Persona2.html">Table</a> 
+      <a href="Persona3.html">Register</a> 
+      <a href="Persona4.html">Quiz</a> 
+      <a href="Persona5.html">Sources</a> 
+   </nav> 
+   <div  class="heading"> 
+      <h1>Welcome to My personality hub</h1> 
+      <h3>Here you can know more about me</h3> 
+      <button onclick="showData()">Show Author Info</button>
+      <div id="dataOutput"></div> 
+   </div> 
+   <script>
+      function showData() { 
+    // Object 
+    const Author = { 
+        name: "Emran Abdulaqadir", 
+        born: 2009, 
+        country: "Saudi Arabia, Riyadh",
+        school : "Ethiopian International School- Riyadh"
+    }; 
+    // Array 
+    let skills = ["IQ", "Dicipline", "High performance", "Good leadership"]; 
+    // Date 
+    let today = new Date(); 
+    let result = 
+    "<strong>Student Name:</strong> " + Author.name + "<br>" + 
+"<strong>School Name:</strong> " + Author.school + "<br>" + 
+"<strong>Born:</strong> " + Author.born + "<br>" + 
+"<strong>Location:</strong> " + Author.country + "<br><br>" + 
+"<strong>School Programs:</strong> " + skills.join(", ") + 
+"<br><br>" + 
+"<strong>Today's Date:</strong> " + today.toDateString(); 
+document.getElementById("dataOutput").innerHTML = result; 
+} 
+   </script>
+</body>
+</html></html> 
 
